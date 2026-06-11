@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forbidden FXDZ Barbershop | Northolt</title>
+  <style>
+    /* CSS Variables for easy theming */
+    :root {
+      --bg-color: #0a0a0a;
+      --text-color: #f4f4f4;
+      --accent-color: #d4af37; /* Gold accent */
+      --secondary-bg: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 5%;
+      background-color: rgba(10, 10, 10, 0.95);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--accent-color);
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80') center/cover;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #ccc;
+      max-width: 600px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: var(--accent-color);
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      text-transform: uppercase;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    /* Section Global Styles */
+    section {
+      padding: 5rem 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: var(--accent-color);
+    }
+
+    /* Services Section */
+    .services {
+      background-color: var(--secondary-bg);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-color);
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #333;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-color);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card .price {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    /* Location & Info */
+    .info-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .info-box {
+      flex: 1;
+      min-width: 300px;
+      background-color: var(--secondary-bg);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+
+    .info-box h3 {
+      margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    .info-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #050505;
+      border-top: 1px solid #333;
+    }
+
+    /* Scroll Animation Classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-links { display: none; } /* Add a hamburger menu for full production */
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="logo">FORBIDDEN <span>FXDZ</span></a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#location">Location</a>
+      <a href="https://booksy.com/en-gb/156145_forbidden-fxdz-barbershop-bxrber-ali_barber_311817_london" target="_blank" class="btn" style="padding: 8px 20px; margin-left: 2rem;">Book Now</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="fade-in">
+      <h1>Forbidden FXDZ</h1>
+      <p>Premium grooming, precision fades, and top-tier service in Northolt.</p>
+      <a href="https://booksy.com/en-gb/156145_forbidden-fxdz-barbershop-bxrber-ali_barber_311817_london" target="_blank" class="btn">Book on Booksy</a>
+    </div>
+  </header>
+
+  <section id="services" class="services">
+    <h2 class="section-title fade-in">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <h3>Haircut & Beard</h3>
+        <p>Premium haircut and beard sculpt including hot towel finish.</p>
+        <div class="price">£30.00</div>
+      </div>
+      <div class="service-card fade-in">
+        <h3>Haircut Only</h3>
+        <p>Precision fade, taper, or classic cut tailored to you.</p>
+        <div class="price">£25.00</div>
+      </div>
+      <div class="service-card fade-in">
+        <h3>Shape Up & Taper</h3>
+        <p>Sharp line up with a light taper to keep you looking fresh.</p>
+        <div class="price">£15.00</div>
+      </div>
+      <div class="service-card fade-in">
+        <h3>Kids Haircut</h3>
+        <p>Expert cuts for the younger generation (Under 12s).</p>
+        <div class="price">£10.00</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="location">
+    <h2 class="section-title fade-in">Visit Us</h2>
+    <div class="info-container fade-in">
+      <div class="info-box">
+        <h3>Location</h3>
+        <p><strong>Forbidden FXDZ Barbershop</strong></p>
+        <p>7a Higham Mews</p>
+        <p>Northolt</p>
+        <p>UB5 6FP, United Kingdom</p>
+      </div>
+      <div class="info-box">
+        <h3>Opening Hours</h3>
+        <p><strong>Monday - Saturday:</strong> 10:00 AM - 7:00 PM</p>
+        <p><strong>Sunday:</strong> Closed</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Forbidden FXDZ Barbershop. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll fade-in animations
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Only animate once
+          }
+        });
+      }, observerOptions);
+
+      const animatedElements = document.querySelectorAll('.fade-in');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
